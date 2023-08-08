@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: a collection of open-source projects that I've worked on.
 nav: true
-nav_order: 2
-display_categories: [work, fun]
+nav_order: 1
+display_categories: [software, ml, matrixmaster.me]
 horizontal: false
 ---
 

@@ -2,25 +2,26 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  address: false
 
 news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
+latest_posts: false  # includes a list of the newest posts
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hey there! I am a third year undergraduate student in computer science and biology at **[McGill University](https://www.mcgill.ca/)**.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My interests are quite broad, but have recently converged towards the areas of **graph representation learning** and **network science** with applications in chemistry and biology. 
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+More generally, I enjoy spending my time coding, songwriting, hiking, and sharing my thoughts through my **[blog](/blog)**. I hope that my writing can bring something positive or insightful to your day.
+
+I was previously a co-founder and lead engineer at **[Hero AI](https://www.heroai.ca/)**, where I designed and developed the core frontend architecture for the flagship real-time dashboard and patient beacon products, did research on clinical screening models at the **[Hospital for Sick Children](https://www.sickkids.ca/)**, and completed internships at **Lino AI**, **[The Bagot Lab](https://www.bagotlab.org/)**, and **[The Ferbeyre Lab](http://www.mapageweb.umontreal.ca/ferbeyre/index-en.htm)**.
+
+I am also very grateful to be a **[Schulich Scholar](https://schulichleaders.com/)** and an alumnus of the **[Canada-Wide Science Fair](https://youthscience.ca/science-fairs/)** where I started my STEM journey.
+

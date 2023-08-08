@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
   }
 
-  // add css to jupyter notebooks
+  // add css to jupyter notebooks and logo icon
   const cssLink = document.createElement("link");
   cssLink.href  = "../css/jupyter.css";
   cssLink.rel   = "stylesheet";
@@ -33,6 +33,9 @@ $(document).ready(function() {
       theme = "dark";
     }
   }
+
+  const contrast_theme = theme == "dark" ? "light" : "dark";
+  $('#logo-icon').attr('src', 'assets/img/logo/sl-icon-' + contrast_theme + '.png');
 
   $('.jupyter-notebook-iframe-container iframe').each(function() {
     $(this).contents().find("head").append(cssLink);

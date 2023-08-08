@@ -25,6 +25,11 @@
           <div class="navbar-brand social">
             {% include social.html %}
           </div>
+          {%- else -%}
+          <!-- Social Icons -->
+          <div class="navbar-brand social">
+            <img id="logo-icon" height="35px" />
+          </div>
           {% endif %}
           <!-- Navbar Toggle -->
           <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
