@@ -26,6 +26,11 @@ let setTheme = (theme) => {
       }
     }
 
+    // Set class on logo icon
+    const contrast_theme = theme == "dark" ? "light" : "dark";
+    let icon = document.getElementById("logo-icon");
+    if (icon) icon.src = `/assets/img/logo/sl-icon-${contrast_theme}.png`;
+
     // Set jupyter notebooks themes.
     let jupyterNotebooks = document.getElementsByClassName("jupyter-notebook-iframe-container");
     for (let i = 0; i < jupyterNotebooks.length; i++) {

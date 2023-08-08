@@ -27,6 +27,9 @@
                 <span id="{{ project.github_stars }}-stars"></span>
               </span>
               {%- endif %}
+              {%- if project.year -%}
+              <h6 class="card-subtitle mt-2 text-muted">{{ project.year }}</h6>
+              {%- endif %}
             </div>
             {%- endif %}
           </div>
