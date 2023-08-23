@@ -19,10 +19,10 @@ An activity that I have absolutely fallen for is nighttime photography. In the h
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/at-night/IMG_5221.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/blog/2023-08-07-late-night/IMG_5221.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/at-night/IMG_5254.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/blog/2023-08-07-late-night/IMG_5254.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -30,10 +30,10 @@ An activity that I have absolutely fallen for is nighttime photography. In the h
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/at-night/IMG_6077.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/blog/2023-08-07-late-night/IMG_6077.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/at-night/IMG_6929.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/blog/2023-08-07-late-night/IMG_6929.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -41,9 +41,9 @@ An activity that I have absolutely fallen for is nighttime photography. In the h
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/at-night/IMG_7774.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/blog/2023-08-07-late-night/IMG_7774.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/at-night/IMG_7782.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/blog/2023-08-07-late-night/IMG_7782.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
