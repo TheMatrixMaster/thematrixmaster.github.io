@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: A Practical Foray into Network Analysis [Part 1]
+title: A Practical Foray into Network Analysis
 date: 2023-09-03
 tags: machine-learning network graph visualization distill
 giscus_comments: false
@@ -30,7 +30,7 @@ Recently, I've been particularly interested by these research areas incorporatin
 
 In this series of blog posts, my goal is to document my learning process from the most basic principles in network science to advanced topics in graph neural networks through a hands-on application of techniques to interesting datasets that I can get my hands on.
 
-In this part 1, I focus on graph data visualization using the Canadian [FooDB](www.foodb.ca) dataset covering detailed compositional, biochemical and physiological information about common food items.
+In this post, I focus on graph data visualization using the Canadian [FooDB](www.foodb.ca) dataset covering detailed compositional, biochemical and physiological information about common food items.
 
 ## Food-Centric View
 Given that the database documents the absolute enrichment of many compounds in common foods, a natural first approach is to take the food-centric view and ask whether certain compounds are especially enriched in some categories of food. To address this question in a visual way, let's try to construct a food-centric graph. Let $$G=(V,E)$$ denote our graph where each node $$v \in V$$ represents a food item (ex: strawberries) and $$\exists (u,v) \in E \iff$$ the foods $$(u,v)$$ share at least one compound. Then, for each undirected edge $$(u,v) \in E$$, we can add a normalized edge weight using the following function $$f(u,v)=\sum_{k\in K}{\frac{1}{S_k}}$$ where $$K$$ is the set of all compounds shared between foods $$(u,v)$$ and $$S_{k}$$ is the number of foods in which compound $$k$$ is found. This function $$f$$ penalizes the weight of compounds that are shared by too many foods. Finally, we make node size proportional to node degree which highlights foods that are highly interconnected in the graph by sharing many compounds with other foods.
@@ -162,4 +162,4 @@ Here are some additional graphs for **rice, chicken, and cow milk**. I personall
 </div>
 
 ## Conclusion
-And that concludes the visualization work in this first part of the network analysis series. All I used to perform this analysis is some basic python code with the pandas and networkx libraries, as well as graph visualizations in Gephi. Although these graphs don't provide very rigourous answers to some of the questions that we asked, I think that their main value lies in their capacity to convey meaningful information about the relationships between a very large amount of data points in a way that is natural for us to reason about. This large scale view of the dataset yields many insights for further analysis that I will explore in the next part of this series.
+And that concludes the visualization work in this intro to network analysis series. All I used to perform this analysis is some basic python code with the pandas and networkx libraries, as well as graph visualizations in Gephi. Although these graphs don't provide very rigourous answers to some of the questions that we asked, I think that their main value lies in their capacity to convey meaningful information about the relationships between a very large amount of data points in a way that is natural for us to reason about. This large scale view of the dataset yields many insights for further analysis that I will explore in the next part of this series.
