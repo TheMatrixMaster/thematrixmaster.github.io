@@ -2,7 +2,7 @@
 layout: distill
 title: Variational Inference w/ EM algorithm (Part 1)
 date: 2023-10-09
-tags: bayesian inference statistics gwas prs
+tags: bayesian variational inference statistics theory
 giscus_comments: true
 
 authors:
@@ -15,7 +15,7 @@ bibliography: 2023-10-09-variational-inf.bib
 ---
 
 ## Motivation
-Given an underlying distribution $$p_r$$ with unknown parameters $$\theta$$, the goal of Bayesian inference is to learn a posterior distribution over $$\theta$$ given a dataset $$X$$ whose examples are sampled independently from $$p_r$$. Given that $$p_r$$ might be a very complex distribution over many random variables, one trick to simplify the task involves introducing latent variables $$z$$ that break down the overall inference problem into smaller subproblems (like a **divide-and-conquer** approach). Given these additional latents, our objective is to infer the joint posterior distribution over the unknown parameters $$\theta$$ and latents $$z$$ given an observed dataset $$X$$.
+Given an underlying distribution $$p_r$$ with unknown parameters $$\theta$$, the goal of Bayesian inference is to learn a posterior distribution over $$\theta$$ given a dataset $$X$$ whose examples are sampled independently from $$p_r$$. Given that $$p_r$$ might be a very complex distribution over many random variables, one trick to simplify the task involves introducing latent variables $$z$$ that break down the overall inference problem into smaller subproblems (like a **divide-and-conquer** approach). Given these additional latents, our objective is to infer the joint posterior distribution over the unknown parameters $$\theta$$ and latents $$z$$ given an observed dataset $$X$$ according to Bayes' rule.
 
 $$
 \begin{equation}
@@ -24,14 +24,14 @@ p(\theta,z|X) = \frac{p(X\vert\theta,z)p(\theta|z)p(z)}{p(X)}
 \end{equation}
 $$
 
-Although the latents simplify the likelihood term, this posterior remains intractable given that we need to marginalize over all parameters and latents to compute the evidence $$p(X)=\int{\int{p(X,\theta,z)dz\,}d\theta}$$.
+Although the latents simplify the problem, this posterior remains intractable given that we need to marginalize over all parameters and latents to compute the evidence $$p(X)=\int{\int{p(X,\theta,z)dz\,}d\theta}$$.
 
-To address this problem, one can attempt to approximate the evidence using stochastic sampling (Monte Carlo methods), but this optimization procedure is not interpretable, is compute-intensive, and requires many samples for convergence. Another approach, known as mean-field variational inference (VI), allows us to completely bypass the evidence computation issue by making a few additional assumptions about $$\theta$$ and $$z$$.
+To address this, one can attempt to approximate the evidence using stochastic sampling (Monte Carlo methods), but this optimization procedure is not interpretable, is compute-intensive, and requires many samples for convergence. Another approach, known as mean-field variational inference (VI), allows us to completely bypass the evidence computation issue by making a few additional assumptions about $$\theta$$ and $$z$$.
 
-In this (part 1) post, I will attempt to go over the theory behind this method, and in the next post (part 2), I'll walk through my implementation of mean-field VI on the task of polygenic risk score (PRS) regression with spike-and-slab prior.
+In this (part 1) post, I will go over the theory behind this method, and in the next post (part 2), I'll walk through my implementation of mean-field VI on the task of polygenic risk score (PRS) regression with spike-and-slab prior.
 
 ### Variational Distribution by Mean-Field
-Given that the evidence term is intractable, variational inference proposes that we learn a simpler distribution over the unknown parameters and latents $$q(\theta,z)$$ that approximates the true posterior $$p(\theta,z|X)$$. Most importantly, the main idea behind mean-field VI is that we can strategically restrict $$q(\theta,z)$$ to a simpler distribution family than $$p(\theta,z\vert X)$$, whilst optimizing the parameters of $$q$$ to obtain a good approximation of $$p$$. The only assumption we need for this to work is the mean-field approximation, i.e. conditional independence among some partition of the latents $$z$$ into $$z_1, ..., z_M$$ such that
+Given that the evidence term is intractable, variational inference proposes that we learn a simpler distribution over the unknown parameters and latents $$q(\theta,z)$$ that approximates the true posterior $$p(\theta,z|X)$$. Most importantly, the main idea behind mean-field VI is that we can strategically restrict $$q(\theta,z)$$ to a simpler distribution family than $$p(\theta,z\vert X)$$, while optimizing the parameters of $$q$$ to obtain a good approximation of $$p$$. The only assumption we need for this to work is the mean-field approximation, i.e. conditional independence among some partition of the latents $$z$$ into $$z_1, ..., z_M$$ such that
 
 $$
 \begin{equation}
@@ -49,11 +49,11 @@ $$
 \begin{equation}
 \label{eq:elbo}
 \begin{split}
-\mathbb{KL}(q\,\|\, p) & = \int{\int{q(\theta,z) \log\frac{p(\theta,z)}{q(\theta,z)} dz}\, d\theta} \\
-    & = \int{\int{q(\theta,z) \log\frac{p(X,\theta,z)}{p(X)q(\theta,z)} dz\,}d\theta} \\
-    & = \int{\int{q(\theta,z) [\log\frac{p(X,\theta,z)}{q(\theta,z)} - \log{p(X)}] dz}\, d\theta} \\
-    & = \int{\int{q(\theta,z) \log\frac{p(X,\theta,z)}{q(\theta,z)} dz}\, d\theta} - \log{p(X)}\int{\int{q(\theta,z)dz}\, d\theta} \\
-    & = \text{ELBO}(q,\phi) - \log{p(X)}
+\mathbb{KL}(q\,\|\, p) & = \int{\int{q(\theta,z) \log\frac{q(\theta,z)}{p(\theta,z)} dz}\, d\theta} \\
+    & = \int{\int{q(\theta,z) \log\frac{q(\theta,z)p(X)}{p(X,\theta,z)} dz\,}d\theta} \\
+    & = \int{\int{q(\theta,z) [\log\frac{q(\theta,z)}{p(X,\theta,z)} + \log{p(X)}] dz}\, d\theta} \\
+    & = \int{\int{q(\theta,z) \log\frac{q(\theta,z)}{p(X,\theta,z)} dz}\, d\theta} + \log{p(X)}\int{\int{q(\theta,z)dz}\, d\theta} \\
+    & = -\text{ELBO}(q,\phi) + \log{p(X)}
 \end{split}
 \end{equation}
 $$
@@ -71,8 +71,8 @@ $$
     & = \int \prod_i q(z_i\vert\phi) \log p(X,z) dz - \sum_i \int q(z_i\vert\phi) \log q(z_i\vert\phi) dz_i \\
     & = \sum_j \int q(z_j) (\int \prod_{i\neq j}q(z_i)\log p(X,z) \prod_{i\neq j}dz_i\, dz_j) \\
     & \qquad - \int q(z_j)\log q(z_j)dz_j - \sum_{i\neq j}\int q(z_i)\log q(z_i)dz_i \\
-    & = \sum_j \int q(z_j)\log \frac{\text{exp}(\mathbb{E}_{q(z_i)}[\log p(X,z)]_{i\neq j})}{q(z_j)} - \sum_{i\neq j}\int q(z_i)\log q(z_i)dz_i \\
-    & = -\mathbb{KL}[q_j \| \tilde{p}_{i\neq j}] + \mathbb{H}(z_{i\neq j}) + C \\
+    & = \sum_j \int q(z_j)\log \frac{\text{exp}(\mathbb{E}_{q(z_i)}[\log p(X,z)]_{i\neq j})}{q(z_j)}dz_j - \sum_{i\neq j}\int q(z_i)\log q(z_i)dz_i \\
+    & = -\mathbb{KL}[q_j \| \tilde{p}_{i\neq j}] + \mathbb{H}(z_{i\neq j}) + C
 \end{split}
 \end{equation}
 $$
@@ -126,7 +126,7 @@ $$
 \end{equation}
 $$
 
-We keep run these two steps until the ELBO converges to a maximum.
+We keep running these two steps until the ELBO converges to a maximum.
 
 ### Conclusion
 Mean-field variational inference allows us to avoid approximating the intractable evidence in a Bayesian model to obtain an approximation of the posterior distribution by optimizing a factorized variational distribution over the latents and unknown parameters of interest through expectation maximization of the evidence lower bound.
