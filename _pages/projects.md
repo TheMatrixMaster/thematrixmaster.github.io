@@ -3,8 +3,8 @@ layout: page
 title: projects
 permalink: /projects/
 description: a collection of open-source projects that I've worked on.
-nav: true
-nav_order: 1
+nav: false
+nav_order: 4
 display_categories: [software, ml, matrixmaster.me]
 horizontal: false
 ---
