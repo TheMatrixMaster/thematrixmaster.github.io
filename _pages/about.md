@@ -22,10 +22,12 @@ Hey there, welcome to my blog! My name is Stephen and I am a final year undergra
 More concretely, my current research directions include:
 - Developing novel generative frameworks tailored to functional molecular optimization. (**[example](https://arxiv.org/abs/2402.05234)**)
 - Leveraging multimodal contrastive learning to acquire robust and transferable latent representations for chemical perturbation datasets. (**[example](https://arxiv.org/abs/2408.05196)**)
+- Efficiently producing high quality protein conformations using latent generative models of protein structure and sequence (**[example](https://arxiv.org/abs/2410.18403)**)
 
 I have previously been:
 - Research intern at:
   - **[BigHat Biosciences](https://www.bighatbio.com/)** — working on **conditional protein language models for antibody optimization**
+  - **[Mila](https://mila.quebec/en)** — working on **molecule generation with GFlowNets** in Professor Yoshua Bengio's lab
   - **[The Hospital for Sick Children](https://www.sickkids.ca/en/research/about-research-institute/)** — working on **clinical screening models for upper respiratory and urinary tract infections**
 - Co-founding engineer at **[Hero AI](https://www.heroai.ca/)** — working on **clinical automation software**
 - Selected as an **[8VC Fellow](https://www.8vc.com/fellowships)**
