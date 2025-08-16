@@ -9,31 +9,31 @@ profile:
   image_circular: false # crops the image to make it circular
   address: false
 
-news: true  # includes a list of news items
+news: false  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hey there, welcome to my blog! My name is Stephen and I am a final year undergraduate student in honours computer science at **[McGill University](https://www.mcgill.ca/)**.
+Hey there, welcome to my blog! My name is Stephen and I am a first year PhD student at **[UC Berkeley](https://bair.berkeley.edu/)** supervised by Prof. **[Yun S. Song](https://people.eecs.berkeley.edu/~yss/)**.
 
-**I am broadly interested in developing data-driven methods to model physical systems — with a focus on biomolecular (proteins & small molecules) structure, function, and dynamics.**
+**I am broadly interested in developing data-driven methods to model biomolecular systems — with a focus on protein dynamics and evolution.**
 
 More concretely, my current research directions include:
-- Developing novel generative frameworks tailored to functional molecular optimization. (**[example](https://arxiv.org/abs/2402.05234)**)
-- Leveraging multimodal contrastive learning to acquire robust and transferable latent representations for chemical perturbation datasets. (**[example](https://arxiv.org/abs/2408.05196)**)
-- Efficiently producing high quality protein conformations using latent generative models of protein structure and sequence (**[example](https://arxiv.org/abs/2410.18403)**)
+- Devising novel methods for molecular design and optimization ([[1]](#lu2024cell))
+- Evolution-informed representation learning for proteins and DNA
+- Generative modeling of protein dynamics ([[2]](#lu2024structure), [[3]](#lu2025aligning))
 
 I have previously been:
 - Research intern at:
-  - **[BigHat Biosciences](https://www.bighatbio.com/)** — working on **conditional protein language models for antibody optimization**
-  - **[Mila](https://mila.quebec/en)** — working on **molecule generation with GFlowNets** in Professor Yoshua Bengio's lab
-  - **[The Hospital for Sick Children](https://www.sickkids.ca/en/research/about-research-institute/)** — working on **clinical screening models for upper respiratory and urinary tract infections**
+  - **[BigHat Biosciences](https://www.bighatbio.com/)** — working on **antibody optimization**
+  - **[Mila](https://mila.quebec/en)** — working on **2D molecule generation with GFlowNets**
+  - **[Koziarski Lab](https://koziarskilab.com/)** — working on **Bayesian optimization for synthesizable molecule hit discovery**
 - Co-founding engineer at **[Hero AI](https://www.heroai.ca/)** — working on **clinical automation software**
 - Selected as an **[8VC Fellow](https://www.8vc.com/fellowships)**
 - Selected as a **[Schulich Scholar](https://schulichleaders.com/)**
 - Silver medallist at the '19 **[Canada Wide Science Fair](https://cwsf.youthscience.ca/)**
 
-In my free time, I love playing **pickup basketball** at my local park ([Valois park](https://goo.gl/maps/ZRkXcwmqTR65Zx6L8) in Pointe-Claire if you're from the area), composing mostly funky (and a few serious) songs on the **piano**, discovering breathtaking landscapes nestled in low-profile **hiking** trails (my profile pic above was taken atop [Mt. Wakakusa](https://en.wikipedia.org/wiki/Mount_Wakakusa) in Nara, Japan), and spending time with my family and friends in my hometown of **Montreal, Quebec**.
+In my free time, I love playing **pickup basketball**, composing mostly funky (and a few serious) songs on the **piano**, discovering new **hiking** trails (my profile pic above was taken atop [Mt. Wakakusa](https://en.wikipedia.org/wiki/Mount_Wakakusa) in Nara, Japan), and spending time with my family and friends.
 
-Feel free to reach out **[stephen.lu@mail.mcgill.ca](mailto:stephen.lu@mail.mcgill.ca)** if there is anything you want to discuss!
+Feel free to reach out **[stephen.lu@berkeley.edu](mailto:stephen.lu@berkeley.edu)** if you'd like to chat about research or meet for coffee in the Bay Area!
