@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hey there, welcome to my blog! My name is Stephen and I am a first year PhD student at **[UC Berkeley](https://bair.berkeley.edu/)** supervised by Prof. **[Yun S. Song](https://people.eecs.berkeley.edu/~yss/)**.
+Hey there, welcome to my blog! My name is Stephen and I am a first year PhD student at **[UC Berkeley](https://bair.berkeley.edu/)** supervised by Prof. **[Yun S. Song](https://people.eecs.berkeley.edu/~yss/)**. I am also the co-founder and CEO of **[Lucent Cell](https://lucentcell.bio)** with **[Thomas Jiralerspong](https://superkaiba.github.io/)**, where we are using mechanistic interpretability to build the first interpretable virtual cell simulator.
 
 **I am broadly interested in developing data-driven methods to model biomolecular systems — with a focus on protein dynamics and evolution.**
 
