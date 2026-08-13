@@ -31,6 +31,6 @@ Previously, I dabbled in small molecule generative models [[4]](https://openrevi
 - Selected as a **[Schulich Scholar](https://schulichleaders.com/)**
 - Silver medallist at the '19 **[Canada Wide Science Fair](https://cwsf.youthscience.ca/)** -->
 
-In my free time, I love playing **pickup basketball**, composing some funky songs on the **piano**, discovering new **hiking** trails (my profile pic above was taken atop [Mt. Wakakusa](https://en.wikipedia.org/wiki/Mount_Wakakusa) in Nara, Japan), and spending time with my family and friends.
+In my free time, I love playing pickup basketball, composing some funky songs on the piano, discovering new hiking trails, and spending time with my family and friends.
 
 Feel free to reach out at **[stephen.lu@berkeley.edu](mailto:stephen.lu@berkeley.edu)** if you'd like to chat about research or meet for coffee in the Bay Area!

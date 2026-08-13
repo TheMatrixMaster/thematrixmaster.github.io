@@ -55,11 +55,12 @@
           {%- assign author_array_limit = site.max_author_limit -%}
         {%- endif -%}
 
+        {%- assign ec_list = entry.equalcontrib | split: "," -%}
         {%- for author in entry.author_array limit: author_array_limit -%}
           {%- assign author_is_self = false -%}
-          {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" -%}
-          {%- if site.scholar.last_name contains author_last_name -%}
-            {%- if site.scholar.first_name contains author.first -%}
+          {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" | strip -%}
+          {%- if author_last_name == site.last_name -%}
+            {%- if author.first contains site.first_name -%}
               {%- assign author_is_self = true -%}
             {%- endif -%}
           {%- endif -%}
@@ -77,12 +78,18 @@
             {%- if forloop.first == false -%},&nbsp;{%- endif -%}
           {%- endif -%}
 
+          {%- capture fi_str %}{{ forloop.index }}{% endcapture -%}
+          {%- assign show_ec_star = false -%}
+          {%- if ec_list contains fi_str -%}
+            {%- assign show_ec_star = true -%}
+          {%- endif -%}
+
           {%- if author_is_self -%}
-            <strong>{{ author.first }} {{ author.last }}</strong>
+            <strong>{{ author.first }} {{ author.last }}</strong>{%- if show_ec_star -%}<sup>*</sup>{%- endif -%}
           {%- elsif coauthor_url -%}
-            <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>
+            <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>{%- if show_ec_star -%}<sup>*</sup>{%- endif -%}
           {%- else -%}
-            {{ author.first }} {{ author.last }}
+            {{ author.first }} {{ author.last }}{%- if show_ec_star -%}<sup>*</sup>{%- endif -%}
           {%- endif -%}
         {%- endfor -%}
 
