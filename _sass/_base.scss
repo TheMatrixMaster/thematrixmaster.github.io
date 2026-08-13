@@ -656,6 +656,19 @@ footer.sticky-bottom {
       justify-content: flex-end;
       padding-top: 0.1rem;
     }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .paper-info {
+        width: 100%;
+      }
+
+      .paper-actions {
+        justify-content: flex-start;
+      }
+    }
   }
 
   .paper-description {
