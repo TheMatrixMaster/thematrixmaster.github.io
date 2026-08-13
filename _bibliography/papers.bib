@@ -1,103 +1,98 @@
 ---
 ---
 
-@misc{lu2026conditionallysiteindependentneuralevolution,
-  title={Conditionally Site-Independent Neural Evolution of Antibody Sequences}, 
-  author={<strong>Lu</strong>, <strong>Stephen Zhewen</strong> and Aakarsh Vermani and Kohei Sanno and Jiarui Lu and Frederick A Matsen and Milind Jagota and Yun S. Song},
+@inproceedings{lu2026cosine,
+  title={Conditionally Site-Independent Neural Evolution of Antibody Sequences},
+  author={Lu, Stephen Zhewen and Vermani, Aakarsh and Sanno, Kohei and Lu, Jiarui and Matsen, Frederick A. and Jagota, Milind and Song, Yun S.},
+  booktitle={ICML},
   year={2026},
-  eprint={2602.18982},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG},
-  url={https://arxiv.org/abs/2602.18982},
+  url={https://openreview.net/forum?id=DcyK4f7ZyU},
   preview={cosine.png},
-  selected={true}
+  selected={true},
+  description={We introduce CoSiNE, a neural CTMC model of antibody affinity maturation that provably approximates the sequential point mutation process while disentangling selection from somatic hypermutation to enable inference-time affinity optimization.},
+  abstract={Common deep learning approaches for antibody engineering focus on modeling the marginal distribution of sequences. By treating sequences as independent samples, however, these methods overlook affinity maturation as a rich and largely untapped source of information about the evolutionary process by which antibodies explore the underlying fitness landscape. In contrast, classical phylogenetic models explicitly represent evolutionary dynamics but lack the expressivity to capture complex epistatic interactions. We bridge this gap with CoSiNE, a continuous-time Markov chain parameterized by a deep neural network. Mathematically, we prove that CoSiNE provides a first-order approximation to the intractable sequential point mutation process, capturing epistatic effects with an error bound that is quadratic in branch length. Empirically, CoSiNE outperforms stateof-the-art language models in zero-shot variant effect prediction by explicitly disentangling selection from context-dependent somatic hypermutation. Finally, we introduce Guided Gillespie, a classifier-guided sampling scheme that steers CoSiNE at inference time, enabling efficient optimization of antibody binding affinity toward specific antigens.}
 }
 
 @inproceedings{duan2025measuring,
   title={Measuring Scientific Capabilities of Language Models with a Systems Biology Dry Lab},
-  author={Duan*, Haonan and <strong>Lu*</strong>, <strong>Stephen Zhewen</strong> and Harrigan, Caitlin Fiona and Desai, Nishkrit and Lu, Jiarui and Koziarski, Micha{\l} and Cotta, Leonardo and Maddison, Chris J},
+  author={Duan, Haonan and Lu, Stephen Zhewen and Harrigan, Caitlin Fiona and Desai, Nishkrit and Lu, Jiarui and Koziarski, Michal and Cotta, Leonardo and Maddison, Chris J.},
   booktitle={NeurIPS Datasets and Benchmarks Track},
   year={2025},
+  url={https://proceedings.neurips.cc/paper_files/paper/2025/hash/a23760ba51036d530a2656c3835f826c-Abstract-Datasets_and_Benchmarks_Track.html},
   preview={scigym.png},
-  selected={true}
+  selected={false},
+  note={* equal contribution},
+  description={We introduce SciGym, a benchmark assessing LLMs' iterative experiment design and interpretation abilities using systems biology dry labs as efficient, realistic testbeds for open-ended scientific discovery.},
+  abstract={Designing experiments and result interpretations are core scientific competencies, particularly in biology, where researchers perturb complex systems to uncover the underlying systems. Recent efforts to evaluate the scientific capabilities of large language models (LLMs) fail to test these competencies because wet-lab experimentation is prohibitively expensive: in expertise, time and equipment. We introduce SciGym, a first-in-class benchmark that assesses LLMs' iterative experiment design and analysis abilities in open-ended scientific discovery tasks. SciGym overcomes the challenge of wet-lab costs by running a dry lab of biological systems. These models, encoded in Systems Biology Markup Language, are efficient for generating simulated data, making them ideal testbeds for experimentation on realistically complex systems. We evaluated six frontier LLMs on 137 small systems, and released a total of 350 systems at https://huggingface. co/datasets/h4duan/scigym-sbml. Our evaluation shows that while more capable models demonstrated superior performance, all models' performance declined significantly as system complexity increased, suggesting substantial room for improvement in the scientific capabilities of LLM agents.}
 }
 
 @inproceedings{lu2025aligning,
   title={Aligning Protein Conformation Ensemble Generation with Physical Feedback},
-  author={Lu, Jiarui and Chen, Xiaoyin and <strong>Lu</strong>, <strong>Stephen Zhewen</strong> and Lozano, Aur{\'e}lie and Chenthamarakshan, Vijil and Das, Payel and Tang, Jian},
+  author={Lu, Jiarui and Chen, Xiaoyin and Lu, Stephen Zhewen and Lozano, Aurelie and Chenthamarakshan, Vijil and Das, Payel and Tang, Jian},
   booktitle={ICML},
   year={2025},
+  url={https://arxiv.org/abs/2505.24203},
   preview={eba.png},
-  selected={true}
+  selected={true},
+  description={We introduce Energy-based Alignment (EBA), calibrating protein conformation generative models with molecular energy feedback to thermodynamically weight conformational states at state-of-the-art accuracy on MD ensemble benchmarks.},
+  abstract={Protein dynamics play a crucial role in protein biological functions and properties, and their traditional study typically relies on time-consuming molecular dynamics (MD) simulations conducted in silico. Recent advances in generative modeling, particularly denoising diffusion models, have enabled efficient accurate protein structure prediction and conformation sampling by learning distributions over crystallographic structures. However, effectively integrating physical supervision into these data-driven approaches remains challenging, as standard energy-based objectives often lead to intractable optimization. In this paper, we introduce Energy-based Alignment (EBA), a method that aligns generative models with feedback from physical models, efficiently calibrating them to appropriately balance conformational states based on their energy differences. Experimental results on the MD ensemble benchmark demonstrate that EBA achieves state-of-the-art performance in generating high-quality protein ensembles. By improving the physical plausibility of generated structures, our approach enhances model predictions and holds promise for applications in structural biology and drug discovery.}
 }
 
 @inproceedings{lu2024structure,
   title={Structure Language Models for Protein Conformation Generation},
-  author={Lu, Jiarui and Chen, Xiaoyin and <strong>Lu</strong>, <strong>Stephen Zhewen</strong> and Shi, Chence and Guo, Hongyu and Bengio, Yoshua and Tang, Jian},
+  author={Lu, Jiarui and Chen, Xiaoyin and Lu, Stephen Zhewen and Shi, Chence and Guo, Hongyu and Bengio, Yoshua and Tang, Jian},
   booktitle={ICLR},
   year={2025},
+  url={https://proceedings.iclr.cc/paper_files/paper/2025/hash/f4901fd0bd9a42f840eabfddf4e7f4f9-Abstract-Conference.html},
   preview={slm.png},
-  selected={true}
+  selected={true},
+  description={We introduce Structure Language Modeling (SLM), encoding protein structures as discrete tokens for autoregressive conformation generation that achieves a 20–100× speedup over diffusion-based methods while covering diverse ensemble modes.},
+  abstract={Proteins adopt multiple structural conformations to perform their diverse biological functions, and understanding these conformations is crucial for advancing drug discovery. Traditional physics-based simulation methods often struggle with sampling equilibrium conformations and are computationally expensive. Recently, deep generative models have shown promise in generating protein conformations as a more efficient alternative. However, these methods predominantly rely on the diffusion process within a 3D geometric space, which typically centers around the vicinity of metastable states and is often inefficient in terms of runtime. In this paper, we introduce Structure Language Modeling (SLM) as a novel framework for efficient protein conformation generation. Specifically, the protein structures are first encoded into a compact latent space using a discrete variational auto-encoder, followed by conditional language modeling that effectively captures sequence-specific conformation distributions. This enables a more efficient and interpretable exploration of diverse ensemble modes compared to existing methods. Based on this general framework, we instantiate SLM with various popular LM architectures as well as proposing the ESMDiff, a novel BERT-like structure language model fine-tuned from ESM3 with masked diffusion. We verify our approach in various scenarios, including the equilibrium dynamics of BPTI, conformational change pairs, and intrinsically disordered proteins. SLM provides a highly efficient solution, offering a 20-100x speedup than existing methods in generating diverse conformations, shedding light on promising avenues for future research.}
 }
 
 @inproceedings{lu2025towards,
   title={Towards Protein Sequence \& Structure Co-Design with Multi-Modal Language Models},
-  author={<strong>Lu</strong>, <strong>Stephen Zhewen</strong> and Lu, Jiarui and Guo, Hongyu and Tang, Jian},
+  author={Lu, Stephen Zhewen and Lu, Jiarui and Guo, Hongyu and Tang, Jian},
   booktitle={LMRL Workshop at ICLR},
   year={2025},
-  preview={esm2flow.png}
+  preview={esm2flow.png},
+  description={We introduce a ranked iterative decoding scheme that unlocks protein language models for sequence-structure co-design, showing that ESM3 with effective sampling can outperform specialized co-design architectures.},
+  abstract={Proteins perform diverse biological functions, governed by the intricate relationship between their sequence and three-dimensional structure. While protein language models (PLMs) have demonstrated remarkable success in functional annotation and structure prediction, their potential for sequence-structure co-design remains underexplored. This limitation arises from pre-training objectives that favor masked token prediction over generative modeling. In this work, we systematically explore sampling strategies to enhance the generative capabilities of PLMs for co-design. Notably, we introduce a ranked iterative decoding with re-masking scheme, enabling PLMs to generate sequences and structures more effectively. Benchmarking ESM3 across multiple scales, we demonstrate that using PLMs effectively at sampling time for co-design tasks can outperform specialized architectures that lack comparable scaling properties. Our work advances the field of computational protein design by equipping PLMs with robust generative capabilities tailored to sequence-structure interdependence.}
 }
 
 @inproceedings{lau2024qgfn,
-  title={Qgfn: Controllable greediness with action values},
-  author={Lau, Elaine and <strong>Lu</strong>, <strong>Stephen Zhewen</strong> and Pan, Ling and Precup, Doina and Bengio, Emmanuel},
+  title={QGFN: Controllable Greediness with Action Values},
+  author={Lau, Elaine and Lu, Stephen Zhewen and Pan, Ling and Precup, Doina and Bengio, Emmanuel},
   booktitle={NeurIPS},
   year={2024},
-  preview={qgfn.png}
+  url={https://proceedings.neurips.cc/paper_files/paper/2024/hash/948d8ba4e30c8c3a800cf436b31f376e-Abstract-Conference.html},
+  preview={qgfn.png},
+  description={We introduce QGFN, combining GFlowNet policies with action-value estimates via a mixing parameter to enable controllably greedy sampling that improves high-reward generation without sacrificing the diversity GFlowNets are designed for.},
+  abstract={Generative Flow Networks (GFlowNets; GFNs) are a family of energy-based generative methods for combinatorial objects, capable of generating diverse and high-utility samples. However, consistently biasing GFNs towards producing high-utility samples is non-trivial. In this work, we leverage connections between GFNs and reinforcement learning (RL) and propose to combine the GFN policy with an action-value estimate, , to create greedier sampling policies which can be controlled by a mixing parameter. We show that several variants of the proposed method, QGFN, are able to improve on the number of high-reward samples generated in a variety of tasks without sacrificing diversity.}
 }
 
 @inproceedings{lu2024cell,
-  title={Cell morphology-guided small molecule generation with gflownets},
-  author={<strong>Lu</strong>, <strong>Stephen Zhewen</strong> and Lu, Ziqing and Hajiramezanali, Ehsan and Biancalani, Tommaso and Bengio, Yoshua and Scalia, Gabriele and Koziarski, Micha{\l}},
-  booktitle={ICML Workshop SPIGM},
+  title={Cell Morphology-Guided Small Molecule Generation with GFlowNets},
+  author={Lu, Stephen Zhewen and Lu, Ziqing and Hajiramezanali, Ehsan and Biancalani, Tommaso and Bengio, Yoshua and Scalia, Gabriele and Koziarski, Michal},
+  booktitle={ICML Workshop on Structured Probabilistic Inference \& Generative Modeling},
   year={2024},
-  preview={omics-gfn.jpg},
-  selected={false}
+  url={https://openreview.net/forum?id=H73QKn7P2o},
+  preview={omics-gfn.png},
+  selected={false},
+  description={We propose an HCI-guided molecular design framework using a multimodal joint embedding as a GFlowNet reward, generating molecules predicted to produce phenotypic effects similar to a given cell morphology image target.},
+  abstract={High-content phenotypic screening, including high-content imaging (HCI), has gained popularity in the last few years for its ability to characterize novel therapeutics without prior knowledge of the protein target. This work focuses on the novel task of HCI-guided molecular design. We consider an approach in which we leverage an unsupervised multimodal joint embedding to define a latent similarity as a reward for GFlowNets. The proposed model learns to generate new molecules that could produce phenotypic effects similar to those of the given image target, without relying on pre-annotated phenotypic labels. We demonstrate that our method generates molecules with high morphological and structural similarity to the target, increasing the likelihood of similar biological activity.}
 }
 
 @article{lu2020clinical,
   title={From Clinic to Computer and Back Again: Practical Considerations When Designing and Implementing Machine Learning Solutions for Pediatrics},
-  author={Nagaraj, S., Harish, V., McCoy, L.G. et al.},
+  author={Nagaraj, S. and Harish, V. and McCoy, L. G. and Lu, Stephen Z. and others},
   year={2020},
   journal={Current Treatment Options in Pediatrics},
   volume={6},
-  issue={4},
-  pages={336-349},
-  html={https://link.springer.com/article/10.1007/s40746-020-00205-4}
-}
-
-@article{lu2023screening,
-  title={Screening of Pneumonia and Urinary Tract Infection at Triage using TriNet}, 
-  author={Stephen Z. Lu},
-  year={2020},
-  eprint={2309.02604},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG},
-  pdf={trinet.pdf}
-}
-
-@article{lu2019emergence,
-  title={A statistical approach to hospital scheduling optimization},
-  author={Lu, Stephen Z},
-  abbr={CWSF},
-  year={2019},
-  pdf={emergence.pdf}
-}
-
-@article{lu2019ysj,
-  title={Implementing circulating miRNAs, tumour DNA and other protein biomarkers in a precise and efficient liquid biopsy test for early cancer detection and localisation},
-  author={Lu, Stephen Z and Lacoste, Justin},
-  abbr={YSJ},
-  year={2019},
-  html={https://ysjournal.com/medicine/implementing-circulating-mirnas-tumour-dna-and-other-protein-biomarkers-in-a-precise-and-efficient-liquid-biopsy-test-for-early-cancer-detection-and-localisation/}
+  number={4},
+  pages={336--349},
+  html={https://link.springer.com/article/10.1007/s40746-020-00205-4},
+  preview={clinic.png},
+  description={We outline the unique clinical, technical, and ethical considerations for ML in pediatrics, providing a common pipeline from project ideation through model translation into clinical practice.},
+  abstract={Machine learning (ML), a branch of artificial intelligence, is influencing all fields in medicine, with an abundance of work describing its application to adult practice. ML in pediatrics is distinctly unique with clinical, technical, and ethical nuances limiting the direct translation of ML tools developed for adults to pediatric populations. To our knowledge, no work has yet focused on outlining the unique considerations that need to be taken into account when designing and implementing ML in pediatrics. The nature of varying developmental stages and the prominence of family-centered care lead to vastly different data-generating processes in pediatrics. Data heterogeneity and a lack of high-quality pediatric databases further complicate ML research. In order to address some of these nuances, we provide a common pipeline for clinicians and computer scientists to use as a foundation for structuring ML projects, and a framework for the translation of a developed model into clinical practice in pediatrics. Throughout these pathways, we also highlight ethical and legal considerations that must be taken into account when working with pediatric populations and data. Here, we describe a comprehensive outline of special considerations required of ML in pediatrics from project ideation to implementation. We hope this review can serve as a high-level guideline for ML scientists and clinicians alike to identify applications in the pediatric setting, generate effective ML solutions, and subsequently deliver them to patients, families, and providers.}
 }

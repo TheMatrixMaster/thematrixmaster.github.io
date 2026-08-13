@@ -1,3 +1,14 @@
+function togglePaperAbstract(id, btn) {
+  var el = document.getElementById('abstract-' + id);
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    btn.textContent = 'Hide';
+  } else {
+    el.style.display = 'none';
+    btn.textContent = 'Abstract';
+  }
+}
+
 $(document).ready(function() {
   // add toggle functionality to abstract and bibtex buttons
   $('a.abstract').click(function() {

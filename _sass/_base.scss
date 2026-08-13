@@ -19,6 +19,11 @@ strong {
   color: var(--global-text-color);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
@@ -178,7 +183,7 @@ blockquote {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  opacity: 0.97;
 }
 
 .navbar .dropdown-menu {
@@ -479,20 +484,38 @@ footer.sticky-bottom {
 .pagination {
   .page-item {
     .page-link {
-      color: var(--global-text-color);
+      color: var(--global-text-color-light);
+      background: none;
+      border: none;
+      font-size: 0.875rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      transition: color 0.15s ease;
 
       &:hover {
-        color: $black-color;
+        color: var(--global-theme-color);
+        background: none;
+        box-shadow: none;
       }
     }
 
     &.active .page-link {
-      color: $white-color;
-      background-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+      background: none;
+      font-weight: 700;
+      border: none;
+      box-shadow: none;
 
       &:hover {
-        background-color: var(--global-theme-color);
+        background: none;
+        color: var(--global-theme-color);
       }
+    }
+
+    &.disabled .page-link {
+      color: var(--global-text-color-light);
+      background: none;
+      opacity: 0.35;
     }
   }
 }
@@ -576,156 +599,178 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    margin-bottom: -2rem;
-    text-align: right;
+    display: none;
   }
 
   ol.bibliography {
     list-style: none;
     padding: 0;
-    margin-top: 0;
+    margin-top: 1.5rem;
+    max-width: 680px;
 
     li {
-      margin-bottom: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
 
-      .preview {
-        width: 100%;
-        min-width: 80px;
-        max-width: 200px;
-      }
+// Selected publications heading on about page
+.selected-pubs-heading {
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
 
-      .abbr {
-        height: 2rem;
-        margin-bottom: 0.5rem;
+// Paper card (publications)
 
-        abbr {
-          display: inline-block;
-          background-color: var(--global-theme-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
+.paper-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
 
-          a {
-            color: white;
+  .paper-thumbnail {
+    width: 33%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 0.85rem;
+    display: block;
+  }
 
-            &:hover {
-              text-decoration: none;
-            }
-          }
-        }
+  .paper-top-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
 
-        .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
-        }
-      }
+    .paper-info {
+      flex: 1;
+      min-width: 0;
+    }
 
-      .title {
-        font-weight: bolder;
-      }
+    .paper-actions {
+      display: flex;
+      gap: 0.3rem;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      padding-top: 0.1rem;
+    }
+  }
 
-      .author {
-        a {
-          border-bottom: 1px dashed var(--global-theme-color);
+  .paper-description {
+    font-size: 0.82rem;
+    color: var(--global-text-color-light);
+    line-height: 1.5;
+    margin-top: 0.35rem;
+  }
 
-          &:hover {
-            border-bottom-style: solid;
-            text-decoration: none;
-          }
-        }
+  .paper-title {
+    font-size: 0.975rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.01em;
 
-        >em {
-          border-bottom: 1px solid;
-          font-style: normal;
-        }
+    a {
+      color: var(--global-text-color);
+      text-decoration: none;
 
-        >span.more-authors {
-          color: var(--global-text-color-light);
-          border-bottom: 1px dashed var(--global-text-color-light);
-          cursor: pointer;
-
-          &:hover {
-            color: var(--global-text-color);
-            border-bottom: 1px dashed var(--global-text-color);
-          }
-        }
-      }
-
-      .links {
-        a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-          margin-left: 0;
-
-          &:hover {
-            color: var(--global-theme-color);
-            border-color: var(--global-theme-color);
-          }
-        }
-      }
-
-      .badges {
-        padding-bottom: 0.5rem;
-        span {
-          display: inline-block;
-          color: $black-color;
-          height: 100%;
-          padding-right: 0.5rem;
-          vertical-align: middle;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      .hidden {
-        font-size: 0.875rem;
-        max-height: 0px;
-        overflow: hidden;
-        text-align: justify;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-
-        p {
-          line-height: 1.4em;
-          margin: 10px;
-        }
-
-        pre {
-          font-size: 1em;
-          line-height: 1.4em;
-          padding: 10px;
-        }
-      }
-
-      .hidden.open {
-        max-height: 100em;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-      }
-
-      div.abstract.hidden {
-        border: dashed 1px var(--global-bg-color);
-      }
-
-      div.abstract.hidden.open {
-        border-color: var(--global-text-color);
+      &:hover {
+        color: var(--global-theme-color);
+        text-decoration: none;
       }
     }
+  }
+
+  .paper-venue {
+    font-size: 0.73rem;
+    color: var(--global-text-color-light);
+    margin-bottom: 0.2rem;
+  }
+
+  .paper-authors {
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    font-style: italic;
+    line-height: 1.4;
+
+    strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--global-text-color);
+    }
+
+    a {
+      color: var(--global-text-color-light);
+      border-bottom: none;
+      font-style: italic;
+
+      &:hover {
+        color: var(--global-theme-color);
+        text-decoration: none;
+      }
+    }
+
+    .more-authors {
+      color: var(--global-text-color-light);
+      cursor: pointer;
+      border-bottom: 1px dashed var(--global-text-color-light);
+
+      &:hover {
+        color: var(--global-theme-color);
+        border-bottom-color: var(--global-theme-color);
+      }
+    }
+  }
+
+  .paper-abstract-content {
+    margin-top: 0.8rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.845rem;
+    line-height: 1.6;
+    color: var(--global-text-color-light);
+    border-left: 2px solid var(--global-divider-color);
+
+    p { margin: 0; }
+  }
+}
+
+
+.paper-btn {
+  padding: 0.22rem 0.58rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 500;
+
+  &:hover { text-decoration: none; }
+}
+
+.primary-paper-btn {
+  background: var(--global-text-color);
+  color: var(--global-bg-color) !important;
+  border: none;
+
+  &:hover {
+    background: var(--global-theme-color);
+    color: var(--global-bg-color) !important;
+  }
+}
+
+.secondary-paper-btn {
+  background: transparent;
+  color: var(--global-text-color-light) !important;
+  border: 1px solid var(--global-divider-color);
+
+  &:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color) !important;
   }
 }
 
