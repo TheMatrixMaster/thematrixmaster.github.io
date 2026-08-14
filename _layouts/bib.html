@@ -5,7 +5,14 @@
 
   <!-- Thumbnail above content -->
   {%- if entry.preview -%}
-    {%- if entry.preview contains '://' -%}
+    {%- assign preview_ext = entry.preview | split: "." | last | downcase -%}
+    {%- if preview_ext == "mp4" or preview_ext == "webm" or preview_ext == "ogg" -%}
+      {%- assign preview_base = entry.preview | split: "." | first -%}
+      <video class="paper-thumbnail" autoplay muted loop playsinline>
+        <source src="{{ preview_base | append: '.webm' | prepend: '/assets/img/publication_preview/' | relative_url }}" type="video/webm">
+        <source src="{{ preview_base | append: '.mp4' | prepend: '/assets/img/publication_preview/' | relative_url }}" type="video/mp4">
+      </video>
+    {%- elsif entry.preview contains '://' -%}
       <img class="paper-thumbnail" src="{{ entry.preview }}" alt="{{ entry.title }}" />
     {%- else -%}
       <img class="paper-thumbnail" src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}" alt="{{ entry.title }}" />

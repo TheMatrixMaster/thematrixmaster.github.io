@@ -9,7 +9,7 @@
   note={* equal contribution},
   equalcontrib={1,2},
   url={https://openreview.net/forum?id=DcyK4f7ZyU},
-  preview={cosine.png},
+  preview={cosine.webm},
   selected={true},
   description={We introduce CoSiNE, a neural CTMC model of antibody affinity maturation that provably approximates the sequential point mutation process while disentangling selection from somatic hypermutation to enable inference-time affinity optimization.},
   abstract={Common deep learning approaches for antibody engineering focus on modeling the marginal distribution of sequences. By treating sequences as independent samples, however, these methods overlook affinity maturation as a rich and largely untapped source of information about the evolutionary process by which antibodies explore the underlying fitness landscape. In contrast, classical phylogenetic models explicitly represent evolutionary dynamics but lack the expressivity to capture complex epistatic interactions. We bridge this gap with CoSiNE, a continuous-time Markov chain parameterized by a deep neural network. Mathematically, we prove that CoSiNE provides a first-order approximation to the intractable sequential point mutation process, capturing epistatic effects with an error bound that is quadratic in branch length. Empirically, CoSiNE outperforms stateof-the-art language models in zero-shot variant effect prediction by explicitly disentangling selection from context-dependent somatic hypermutation. Finally, we introduce Guided Gillespie, a classifier-guided sampling scheme that steers CoSiNE at inference time, enabling efficient optimization of antibody binding affinity toward specific antigens.}
